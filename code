@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>BASIC CALCULATOR</title>
+  <style>
+      body {background-color: white;}
+    .special {color: rgb(0, 4, 255)}
+    .operator {font-weight: bold;}
+    #result {border: solid 1pt;
+      border-color: gray;
+      width: 70px;
+      color:rgb(17, 16, 16)}
+    .combo{padding:1px;}
+    #title {font-family: cursive,sans-serif;
+        color:rgb(76, 0, 255);
+        text-align:center;
+        }
+
+  </style>
+  <br>
+  <br>
+  <div id ="title" title="BASIC CALCULATOR">BASIC CALCULATOR</div>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script>
+      var menu = document.getElementById("options");
+      
+    function myfun() {
+      document.getElementById('demo').style.fontSize='35px';   
+    }  
+
+    function operations() {
+        const x = document.getElementById('first').value;
+        const y = document.getElementById('second').value;
+        if (document.getElementById('options').value=="Addition") {
+            document.getElementById('result').innerHTML = parseInt(x) + parseInt(y);
+         } else if (document.getElementById('options').value=="Subtraction") {
+            document.getElementById('result').innerHTML = parseInt(x) - parseInt(y);
+        }
+           else if (document.getElementById('options').value=="Multiplication") {
+            document.getElementById('result').innerHTML = parseInt(x) * parseInt(y);
+        }
+           else if (document.getElementById('options').value=="Division") {
+            document.getElementById('result').innerHTML = parseInt(x) / parseInt(y);
+        }
+
+    }
+
+  </script>
+</head>
+
+
+<body>
+    <style> body{font-family:sans-serif} </style>
+    <div class="special"></p>Select two numbers and make an operation.</div>
+        <br>
+        <input id="first" placeholder="First number">
+        <select class="combo" id="options" >
+            <option value="" selected disabled hidden> Operation </option>
+            <option value="Addition">Addition</option>
+            <option value="Subtraction">Subtraction</option>
+            <option value="Multiplication">Multiplication</option>
+            <option value="Division">Division</option>
+        </select>
+        <input id="second" placeholder="Second number">
+        <button id="equalTo" onclick="operations()">=</button>
+        <br>
+        <br>
+    <div class="special">Result:<br>   
+        <br>
+        <div id="result"> &nbsp</div>
+    </div>
+    
+</body>
